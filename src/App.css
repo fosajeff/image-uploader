@@ -1,0 +1,43 @@
+.table-custom {
+    height: 620px;
+}
+
+.table-custom td {
+    border-bottom: none;
+}
+
+.card {
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.image-dropzone {
+    cursor: pointer;
+    height: 270px;
+    padding: 20px;
+    background: #F6F8FB;
+    border: 2px dashed #97BEF4;
+    border-radius: 15px;
+    color: #bdbdbd;
+    outline: none;
+    transition: border .24s ease-in-out,
+}
+
+
+.btn {
+    border-radius: 8px;
+}
+
+@media (max-width: 567px) {
+    .table-custom {
+        height: 480px;
+    }
+
+    .image-dropzone {
+        height: 210px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
