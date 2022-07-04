@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Button, Card, CardBody, CardSubtitle, CardTitle } from "reactstrap";
+import { Button, CardSubtitle, CardTitle } from "reactstrap";
 import { useDropzone } from "react-dropzone";
 import Layout from "./Layout";
 
@@ -19,9 +19,24 @@ const rejectStyle = {
   borderColor: "#ff1744",
 };
 
-const Upload = () => {
-  const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } =
-    useDropzone({ accept: { "image/*": [] } });
+const Upload = ({ onUpload: uploadFile }) => {
+  const {
+    getRootProps,
+    getInputProps,
+    isFocused,
+    isDragAccept,
+    isDragReject,
+    open,
+    acceptedFiles,
+  } = useDropzone({
+    accept: { "image/jpeg": [], "image/png": [] },
+    noClick: true,
+    noKeyboard: true,
+  });
+
+  if (acceptedFiles.length > 0) {
+    uploadFile(acceptedFiles[0]);
+  }
 
   const style = useMemo(
     () => ({
@@ -34,29 +49,26 @@ const Upload = () => {
   );
 
   return (
-    <Layout>
-      <Card body className="p-sm-4 p-3">
-        <CardBody>
-          <CardTitle tag="h2" className="text-muted">
-            Upload your image
-          </CardTitle>
-          <CardSubtitle className="py-4 mb-3 text-muted" tag="h6">
-            File should be Jpeg, Png...
-          </CardSubtitle>
+    <Layout className="pt-4 text-center">
+      <CardTitle tag="h2" className="text-muted">
+        Upload your image
+      </CardTitle>
 
-          <div className="image-dropzone" {...getRootProps({ style })}>
-            <input {...getInputProps()} />
-            <img src={imgIcon} width="130" alt="upload" className="mt-4" />
-            <p className="my-sm-5 my-4">Drag & drop your image here</p>
-          </div>
+      <CardSubtitle className="py-4 mb-3 text-muted" tag="h6">
+        File should be Jpeg, Png...
+      </CardSubtitle>
 
-          <div className="pt-4 text-muted">Or</div>
+      <div className="image-dropzone" {...getRootProps({ style })}>
+        <input {...getInputProps()} />
+        <img src={imgIcon} width="130" alt="upload" className="mt-4" />
+        <p className="my-sm-5 my-4">Drag & drop your image here</p>
+      </div>
 
-          <Button color="primary" className="mt-sm-4 mt-3 px-3">
-            Choose a file
-          </Button>
-        </CardBody>
-      </Card>
+      <div className="pt-4 text-muted">Or</div>
+
+      <Button onClick={open} color="primary" className="mt-sm-4 mt-3 px-3">
+        Choose a file
+      </Button>
     </Layout>
   );
 };

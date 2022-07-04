@@ -1,5 +1,5 @@
 .table-custom {
-    height: 620px;
+    height: 350px;
 }
 
 .table-custom td {
@@ -30,9 +30,58 @@
     border-radius: 8px;
 }
 
+.smaller-screen-btn {
+    display: none;
+}
+
+.progress, .progress-bar {
+    border-radius: 8px;
+    height: 10px;
+}
+
+.preview-img {
+    height: 338px;
+}
+
+.preview-img img {
+    border-radius: 12px;
+}
+
+.upload-result {
+    background: #F6F8FB;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: small;
+    padding: 8px 3px 9px 8px;
+}
+
+.upload-result .btn {
+    margin-top: -5px;
+    float: right;
+}
+
+
+@media (max-width: 380px) {
+    .preview-img {
+        height: 228px;
+    }
+}
+
+@media (min-width: 381px) and (max-width: 400px) {
+    .preview-img {
+        height: 250px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+    .preview-img {
+        height: 320px;
+    }
+}
+
 @media (max-width: 567px) {
     .table-custom {
-        height: 480px;
+        height: 250px;
     }
 
     .image-dropzone {
@@ -40,4 +89,20 @@
         padding: 10px;
         border-radius: 8px;
     }
+}
+
+@media (min-width: 779px) and (max-width: 1199px) {
+    .preview-img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .upload-result .btn {
+        display: none;
+    }
+    .smaller-screen-btn {
+        display: block;
+    }
+    
 }
