@@ -10,9 +10,16 @@ function App() {
   const [isFinished, setIsFinished] = useState(true);
   const [progress, setProgress] = useState(0);
   const [imageUrl, setImageUrl] = useState("");
-  // https://images.yourdomain.com/photo-1496950866446-325
-
   const [error, setError] = useState({});
+
+  const apiLink =
+    process.env.NODE_ENV === "production"
+      ? "https://peejay-image-uploader-backend.herokuapp.com/api"
+      : "http://localhost:4040/api";
+
+  const axiosInstance = axios.create({
+    baseURL: apiLink,
+  });
 
   useEffect(() => {
     handleRetryUpload();
@@ -26,9 +33,11 @@ function App() {
   };
 
   const handleUpload = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
     try {
       setIsLoading(true);
-      const response = await axios.post("url", file, {
+      const response = await axiosInstance.post("/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         onUploadProgress: (data) => {
           setProgress(Math.round((100 * data.loaded) / data.total));

@@ -4,7 +4,7 @@ import Layout from "./Layout";
 
 import successIcon from "../assets/success.png";
 import errorIcon from "../assets/error.jpeg";
-import previewImg from "../assets/test.jpg";
+// import previewImg from "../assets/test.jpg";
 const Result = ({ imageUrl, error, retryUpload }) => {
   const [btnText, setBtnText] = useState("Copy link");
 
@@ -39,7 +39,7 @@ const Result = ({ imageUrl, error, retryUpload }) => {
               Uploaded Successfully!
             </CardTitle>
             <div className="preview-img">
-              <img width="100%" src={previewImg} alt="preview" />
+              <img width="100%" src={imageUrl} alt="preview" />
             </div>
           </div>
           <div className="upload-result mt-md-4">
