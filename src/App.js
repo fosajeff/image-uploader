@@ -14,7 +14,7 @@ function App() {
 
   const apiLink =
     process.env.NODE_ENV === "production"
-      ? "https://peejay-image-uploader-backend.herokuapp.com/api"
+      ? "/api"
       : "http://localhost:4040/api";
 
   const axiosInstance = axios.create({
