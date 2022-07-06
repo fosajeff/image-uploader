@@ -39,9 +39,6 @@
     height: 10px;
 }
 
-.preview-img {
-    height: 338px;
-}
 
 .preview-img img {
     border-radius: 12px;
@@ -61,23 +58,6 @@
 }
 
 
-@media (max-width: 380px) {
-    .preview-img {
-        height: 228px;
-    }
-}
-
-@media (min-width: 381px) and (max-width: 400px) {
-    .preview-img {
-        height: 250px;
-    }
-}
-
-@media (min-width: 401px) and (max-width: 500px) {
-    .preview-img {
-        height: 320px;
-    }
-}
 
 @media (max-width: 567px) {
     .table-custom {
@@ -88,12 +68,6 @@
         height: 210px;
         padding: 10px;
         border-radius: 8px;
-    }
-}
-
-@media (min-width: 779px) and (max-width: 1199px) {
-    .preview-img {
-        height: 300px;
     }
 }
 

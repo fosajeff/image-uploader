@@ -42,7 +42,7 @@ const Result = ({ imageUrl, error, retryUpload }) => {
               <img width="100%" src={imageUrl} alt="preview" />
             </div>
           </div>
-          <div className="upload-result mt-md-4">
+          <div className="upload-result mt-4">
             <span ref={imageUrlTextArea}>{displayLink()}</span>
             <Button
               onClick={handleCopy}

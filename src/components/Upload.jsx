@@ -32,6 +32,7 @@ const Upload = ({ onUpload: uploadFile }) => {
     accept: { "image/jpeg": [], "image/png": [] },
     noClick: true,
     noKeyboard: true,
+    maxSize: 2097152, // 2MB
   });
 
   if (acceptedFiles.length > 0) {
