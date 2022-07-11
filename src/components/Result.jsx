@@ -1,5 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, CardTitle } from "reactstrap";
+import party from "party-js";
+
 import Layout from "./Layout";
 
 import successIcon from "../assets/success.png";
@@ -7,6 +9,15 @@ import errorIcon from "../assets/error.jpeg";
 // import previewImg from "../assets/test.jpg";
 const Result = ({ imageUrl, error, retryUpload }) => {
   const [btnText, setBtnText] = useState("Copy link");
+
+  useEffect(() => {
+    if (imageUrl)
+      party.confetti(document.querySelector("body"), {
+        count: party.variation.range(50, 80),
+        speed: party.variation.range(20, 300),
+        size: party.variation.range(0.6, 1.4),
+      });
+  });
 
   const imageUrlTextArea = useRef(null);
   const displayLink = () => {
