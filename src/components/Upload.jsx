@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Button, CardSubtitle, CardTitle } from "reactstrap";
+import { Alert, Button, CardSubtitle, CardTitle } from "reactstrap";
 import { useDropzone } from "react-dropzone";
 import Layout from "./Layout";
 
@@ -28,6 +28,7 @@ const Upload = ({ onUpload: uploadFile }) => {
     isDragReject,
     open,
     acceptedFiles,
+    fileRejections,
   } = useDropzone({
     accept: { "image/jpeg": [], "image/png": [] },
     noClick: true,
@@ -55,9 +56,17 @@ const Upload = ({ onUpload: uploadFile }) => {
         Upload your image
       </CardTitle>
 
-      <CardSubtitle className="py-4 mb-3 text-muted" tag="h6">
-        File should be Jpeg, Png...
-      </CardSubtitle>
+      {fileRejections.length > 0 ? (
+        <Alert className="my-4 py-2" color="danger">
+          <small>
+            File type must be JPEG | JPG | PNG and not larger than 2MB
+          </small>
+        </Alert>
+      ) : (
+        <CardSubtitle className="py-4 mb-3 text-muted" tag="h6">
+          File should be Jpeg, Png...
+        </CardSubtitle>
+      )}
 
       <div className="image-dropzone" {...getRootProps({ style })}>
         <input {...getInputProps()} />
