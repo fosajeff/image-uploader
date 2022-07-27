@@ -4,7 +4,7 @@ import Layout from "./Layout";
 
 const Loading = ({ progress }) => {
   return (
-    <Layout className="pt-5">
+    <Layout>
       <CardTitle tag="h4" className="text-muted mb-5">
         Uploading...
       </CardTitle>
