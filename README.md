@@ -88,7 +88,7 @@ $ npm start
 
 ## Contact
 
-- Website [fosajeff.com](https://fosajeff.me)
+- Website [fosajeff.me](https://fosajeff.me)
 - GitHub [@fosajeff](https://github.com/fosajeff)
 - Twitter [@efosa_j](https://twitter.com/efosa_j)
 - Email [Efosa Jeffrey](mailto:okoobohefosa@gmail.com)
