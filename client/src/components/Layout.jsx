@@ -19,6 +19,17 @@ const Layout = ({ children, ...rest }) => {
           </Table>
         </Col>
       </Row>
+
+      <div className="text-center footer">
+        Created by{" "}
+        <a
+          href="https://devchallenges.io/portfolio/fosajeff"
+          className="fw-bolder"
+        >
+          fosajeff
+        </a>{" "}
+        - devChallenges.io
+      </div>
     </Container>
   );
 };

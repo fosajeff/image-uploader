@@ -57,9 +57,31 @@
     float: right;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container .row {
+    flex: 1;
+}
+
+.footer {
+    color: #A9A9A9;
+}
+
+.footer a {
+    color: #A9A9A9;
+}
+
+.footer a:hover {
+    color: #555;
+}
 
 
-@media (max-width: 567px) {
+
+@media (max-width: 576px) {
     .table-custom {
         height: 250px;
     }
@@ -68,6 +90,29 @@
         height: 210px;
         padding: 10px;
         border-radius: 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 20vh;
+    }
+
+    .footer {
+        color: #A9A9A9;
+        position: absolute;
+        bottom: 0;
+        right: 5px;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+}
+
+@media (min-width:993px) {
+    .footer {
+        padding: 40px 0px 20px;
     }
 }
 
